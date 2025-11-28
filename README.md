@@ -70,7 +70,7 @@ README.md    → Project overview
 
 ## ⚡ How to Contribute RIGHT NOW
 
-1. Pick a task from [GitHub Issues](https://github.com/aishenreemo/skillchain_edu/issues)
+1. Pick a task from [GitHub Milestones](https://github.com/aishenreemo/skillchain_edu/milestone/1)
 2. Comment you’re taking it  
 3. Work on it immediately  
 4. Just comment your work, Google Docs with no write access or anything you want to add. If you want a pull request, go on, I'll guide you if needed
