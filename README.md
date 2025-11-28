@@ -4,7 +4,7 @@
 
 ---
 
-## 🚨 Attention COM231 & COM232 Classmates!
+## 🚨 Attention BS Computer Science of NUD!
 
 We **ONLY have 3 DAYS left** to finalize SkillChain EDU for SECA!  
 This is **your chance to contribute**, learn, and be part of a project that **could impress judges and showcase ComSci innovation**.  
