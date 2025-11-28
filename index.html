@@ -104,6 +104,10 @@
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; color: #FBBF24; }
     hr { border: none; border-top: 2px solid #D1D5DB; margin: 2rem 0; }
+
+    #contribute-cta:hover {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -118,7 +122,12 @@
 
     <div class="container">
       <!-- Urgent Alert -->
-      <div class="bg-yellow-100 border-4 border-yellow-500 rounded-lg p-6 mb-8 shadow-xl">
+      <div class="bg-yellow-100 border-4 border-yellow-500 rounded-lg p-6 mb-8 shadow-xl"
+        style="
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        ">
         <h2 class="text-3xl md:text-4xl font-black text-red-700 mb-4">🚨 Attention COM231 & COM232 Classmates!</h2>
         <p class="text-xl font-bold text-gray-800 mb-3">
           We <span class="text-red-600 font-black">ONLY have ⏰ <span id="countdown">Calculating...</span></span> to finalize SkillChain EDU for SECA!
@@ -131,6 +140,22 @@
           Every contribution counts —<span class="text-green-600">big or small</span>— and 
           <span class="text-purple-600">everyone will be acknowledged</span>. Let's pull together and make this happen! 💪🔥
         </p>
+        <a 
+          href="https://github.com/aishenreemo/skillchain_edu/issues" 
+          style="margin: auto;"
+          id="contribute-cta"
+        >
+          <button class="text-3xl font-bold" style="
+              padding: 8px 24px;
+              border-radius: 8px;
+              background-color: #B91C1C;
+              color: #fff;
+              border: none;
+              text-decoration: none;
+            "> 
+            Contribute Now
+          </button>
+        </a>
       </div>
 
       <!-- Banner -->
