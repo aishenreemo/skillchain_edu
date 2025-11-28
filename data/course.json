@@ -1,0 +1,70 @@
+[
+  {
+    "course_code": "CCDATRCL",
+    "title": "Data Structures and Algorithms",
+    "description": "This course covers fundamental data structures, algorithms, and problem-solving techniques essential for computer science and software engineering. Emphasis is placed on algorithm analysis, efficiency, and practical implementation using a high-level programming language.",
+    "prerequisites": "Introduction to Programming",
+    "objectives": [
+      "Understand and implement basic data structures like arrays, linked lists, stacks, queues, trees, and graphs.",
+      "Analyze algorithm complexity using Big O notation.",
+      "Design efficient algorithms for sorting, searching, and traversal problems.",
+      "Develop problem-solving and coding skills for real-world applications."
+    ],
+    "weekly_topics": [
+      "Week 1: Introduction to Data Structures and Algorithms",
+      "Week 2: Complexity Analysis and Big O Notation",
+      "Week 3: Arrays and Strings",
+      "Week 4: Linked Lists",
+      "Week 5: Stacks and Queues",
+      "Week 6: Recursion and Divide & Conquer",
+      "Week 7: Sorting Algorithms",
+      "Week 8: Searching Algorithms",
+      "Week 9: Trees",
+      "Week 10: Graphs and Graph Algorithms",
+      "Week 11: Advanced Data Structures",
+      "Week 12: Final Project & Review"
+    ],
+    "assessments": [
+      "Weekly Quizzes (20%)",
+      "Programming Assignments (30%)",
+      "Midterm Exam (20%)",
+      "Final Project (15%)",
+      "Final Exam (15%)"
+    ]
+  },
+  {
+    "course_code": "CCDAPDEV",
+    "title": "Android App Development Fundamentals",
+    "description": "This course introduces students to Android application development. Students will learn to design, develop, and deploy Android apps using Kotlin and Android Studio, focusing on UI/UX, performance, and integration with APIs and databases.",
+    "prerequisites": "Introduction to Programming",
+    "objectives": [
+      "Understand the architecture of Android applications.",
+      "Design responsive and user-friendly Android interfaces using XML and Jetpack Compose.",
+      "Develop Android apps using Kotlin and best practices.",
+      "Integrate APIs, local storage, and databases into Android apps.",
+      "Deploy Android apps to Google Play Store and test on multiple devices."
+    ],
+    "weekly_topics": [
+      "Week 1: Introduction to Android Development and Android Studio Setup",
+      "Week 2: Kotlin Basics for Android Programming",
+      "Week 3: Android UI Components (Layouts, Views, Widgets)",
+      "Week 4: Event Handling and Navigation (Activities & Intents)",
+      "Week 5: Fragments and Advanced UI Design",
+      "Week 6: Data Storage: SharedPreferences, SQLite, Room",
+      "Week 7: Working with REST APIs and JSON",
+      "Week 8: Background Tasks and Services",
+      "Week 9: Notifications, Broadcast Receivers, and Sensors",
+      "Week 10: Performance Optimization and Debugging",
+      "Week 11: Testing, Deployment, and Google Play Submission",
+      "Week 12: Final Android App Project & Review"
+    ],
+    "assessments": [
+      "Weekly Labs (25%)",
+      "Midterm Exam (20%)",
+      "Android App Project (30%)",
+      "Participation & Quizzes (10%)",
+      "Final Exam (15%)"
+    ]
+  }
+]
+
