@@ -1,0 +1,61 @@
+[
+  {
+    "job_title": "Android Mobile App Developer",
+    "location": "Manila / Remote / Hybrid",
+    "employment_type": "Full-time",
+    "summary": "We are seeking an experienced Android developer to design, build, and maintain native Android applications. You will translate product requirements into high-quality, user-friendly apps.",
+    "responsibilities": [
+      "Design and develop Android applications using Kotlin and Android Studio.",
+      "Collaborate with UI/UX designers and backend developers to implement new features.",
+      "Integrate APIs, databases, and external services into apps.",
+      "Optimize app performance, troubleshoot bugs, and maintain code quality.",
+      "Deploy apps to Google Play Store and ensure compliance with Android guidelines."
+    ],
+    "qualifications": [
+      "Bachelor’s degree in Computer Science, IT, or related field.",
+      "Proficient in Kotlin and/or Java; familiarity with Android SDK.",
+      "Experience with RESTful APIs, JSON, and data storage.",
+      "Good problem-solving skills and ability to work in a team."
+    ],
+    "skills": ["Kotlin", "Java", "Android SDK", "REST API", "SQL", "Debugging"]
+  },
+  {
+    "job_title": "Front-End Web Developer",
+    "location": "Quezon City / Remote",
+    "employment_type": "Full-time",
+    "summary": "Join our team as a Front-End Developer to create responsive, interactive web applications using modern web technologies.",
+    "responsibilities": [
+      "Develop responsive user interfaces using HTML, CSS, and JavaScript frameworks like React or Vue.",
+      "Collaborate with backend developers to consume APIs and services.",
+      "Optimize web performance, accessibility, and cross-browser compatibility.",
+      "Maintain clean, modular, and reusable code."
+    ],
+    "qualifications": [
+      "Bachelor’s degree in Computer Science, IT, or related field.",
+      "Experience with React, Vue, or Angular frameworks.",
+      "Proficiency in HTML, CSS, JavaScript, and Git version control.",
+      "Understanding of responsive design and browser compatibility issues."
+    ],
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Vue", "Responsive Design", "Git"]
+  },
+  {
+    "job_title": "Software QA Engineer",
+    "location": "Makati City / On-site",
+    "employment_type": "Full-time",
+    "summary": "We are looking for a QA Engineer to ensure the quality and reliability of our software products by designing and executing test plans.",
+    "responsibilities": [
+      "Develop and execute manual and automated test cases for web and mobile applications.",
+      "Identify, report, and track software defects and inconsistencies.",
+      "Collaborate with developers and product managers to ensure software quality.",
+      "Document test procedures, results, and maintain QA reports."
+    ],
+    "qualifications": [
+      "Bachelor’s degree in Computer Science, IT, or related field.",
+      "Experience with QA tools and frameworks like Selenium, Appium, or JUnit.",
+      "Strong analytical skills and attention to detail.",
+      "Good understanding of SDLC and QA best practices."
+    ],
+    "skills": ["Selenium", "Appium", "JUnit", "Manual Testing", "Bug Tracking", "Automation Testing"]
+  }
+]
+
