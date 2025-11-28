@@ -91,11 +91,23 @@
     .border-l-4 { border-left-width: 4px; }
     .rounded-r-lg { border-top-right-radius: 1rem; border-bottom-right-radius: 1rem; }
     .flex { display: flex; }
+    .col { flex-direction: column; }
+    .row { flex-direction: row; }
+    /* Responsive helpers (md = min-width: 768px) */
+    @media (min-width: 768px) {
+      .md\:row { flex-direction: row; }
+      .md\:space-x-4 > * + * { margin-left: 1rem; }
+      /* reset vertical spacing when switching to horizontal */
+      .md\:space-y-2 > * + * { margin-top: 0; }
+      /* make buttons slightly larger on medium+ screens */
+      .btn { font-size: 1.25rem; padding: 12px 28px; }
+    }
     .items-center { align-items: center; }
     .justify-center { justify-content: center; }
     .space-y-2 > * + * { margin-top: 0.5rem; }
     .space-y-3 > * + * { margin-top: 0.75rem; }
     .space-y-4 > * + * { margin-top: 1rem; }
+    .space-x-4 > * + * { margin-left: 1rem; }
     .space-y-6 > * + * { margin-top: 1.5rem; }
     .grid { display: grid; }
     .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
@@ -105,6 +117,13 @@
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; color: #FBBF24; }
     hr { border: none; border-top: 2px solid #D1D5DB; margin: 2rem 0; }
+  /* Button styles */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
+  .btn:focus { outline: 3px solid rgba(59,130,246,0.25); outline-offset: 2px; }
+  .btn-primary { background: linear-gradient(90deg, #EF4444, #F97316); color: #fff; border: none; box-shadow: 0 6px 18px rgba(249,115,22,0.18); }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(249,115,22,0.22); }
+  .btn-outline { background: transparent; color: #B91C1C; border: 2px solid #B91C1C; }
+  .btn-outline:hover { background: rgba(185,28,28,0.06); transform: translateY(-2px); }
   </style>
 </head>
 <body>
@@ -137,22 +156,14 @@
           Every contribution counts —<span class="text-green-600">big or small</span>— and 
           <span class="text-purple-600">everyone will be acknowledged</span>. Let's pull together and make this happen! 💪🔥
         </p>
-        <a 
-          href="https://github.com/aishenreemo/skillchain_edu/milestone/1" 
-          style="margin: auto;"
-        >
-          <button id="contribute-cta" class="text-3xl font-bold" style="
-              padding: 8px 24px;
-              border-radius: 8px;
-              background-color: #B91C1C;
-              color: #fff;
-              border: none;
-              text-decoration: none;
-              cursor: pointer;
-            "> 
-            Contribute Now
-          </button>
-        </a>
+        <div class="flex col space-y-2 md:row md:space-x-4 md:space-y-2" style="align-items: center; justify-content: center;">
+          <a href="https://github.com/aishenreemo/skillchain_edu/milestone/1" target="_blank" style="text-decoration:none;">
+            <button class="btn btn-primary" type="button">Contribute Now</button>
+          </a>
+          <a href="/SECA-Innovathon-2025-Pitch-Brief.pdf" target="_blank" style="text-decoration:none;">
+            <button class="btn btn-outline" type="button">View Mechanics</button>
+          </a>
+        </div>
       </div>
 
       <!-- Banner -->
