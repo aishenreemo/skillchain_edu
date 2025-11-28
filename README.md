@@ -83,6 +83,7 @@ README.md    → Project overview
 ## 🌍 SDG Alignment
 
 - **SDG 9 – Industry, Innovation & Infrastructure:** aligns academia with industry demands  
+- **SDG 4 - Quality Education:** ensures students gain relevant, verifiable skills
 
 ---
 
