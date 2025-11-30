@@ -113,5 +113,7 @@ def skillner_analyze_curriculum():
     return {
         "status": "SkillNER Arbitrary Text Analysis Complete",
         "total_extracted_course_skills": len(extracted_course_skills),
+        "course_skills": extracted_course_skills,
+        "required_job_skills": all_required_job_skills,
         "gaps_found": results
     }

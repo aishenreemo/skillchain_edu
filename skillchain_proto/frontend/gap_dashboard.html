@@ -7,6 +7,15 @@
         .container { max-width: 1000px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         h1 { color: #d90429; border-bottom: 3px solid #d90429; padding-bottom: 10px; }
         .gap-summary { background-color: #fff0f0; border: 1px solid #d90429; color: #d90429; padding: 15px; margin-bottom: 20px; border-radius: 4px; font-weight: bold; }
+        
+        /* NEW STYLES FOR SKILL SECTIONS */
+        .skill-section { display: flex; justify-content: space-between; margin-bottom: 20px; gap: 20px; }
+        .skill-card { flex: 1; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .course-skills { background-color: #e6f7ff; border: 1px solid #91d5ff; }
+        .job-skills { background-color: #e6ffe6; border: 1px solid #95de64; }
+        .skill-card h3 { margin-top: 0; font-size: 1.1em; }
+        .skill-list { font-size: 0.9em; line-height: 1.6; word-wrap: break-word; }
+        
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: #f2f2f2; }
@@ -17,6 +26,21 @@
     <div class="container">
         <h1>🚨 AI Curriculum Gap Detector</h1>
         <p class="gap-summary" id="summary-message">Scanning syllabi against real-world job demands...</p>
+        
+        <!-- NEW SECTIONS TO DISPLAY EXTRACTED SKILLS -->
+        <div class="skill-section">
+            <div class="skill-card course-skills">
+                <h3 id="course-skills-title">Curriculum Skills Extracted (0)</h3>
+                <p class="skill-list" id="course-skills-list">Loading...</p>
+            </div>
+            <div class="skill-card job-skills">
+                <h3 id="job-skills-title">Market Demand Skills Extracted (0)</h3>
+                <p class="skill-list" id="job-skills-list">Loading...</p>
+            </div>
+        </div>
+        <!-- END NEW SECTIONS -->
+
+        <h2>Job-Specific Critical Gaps</h2>
         
         <table id="gaps-table">
             <thead>
@@ -37,6 +61,17 @@
             const tableBody = document.getElementById('gaps-table').getElementsByTagName('tbody')[0];
             const summaryMessage = document.getElementById('summary-message');
             
+            // NEW ELEMENT REFERENCES
+            const courseSkillsTitle = document.getElementById('course-skills-title');
+            const courseSkillsList = document.getElementById('course-skills-list');
+            const jobSkillsTitle = document.getElementById('job-skills-title');
+            const jobSkillsList = document.getElementById('job-skills-list');
+            
+            // Clear previous content
+            tableBody.innerHTML = '';
+            courseSkillsList.textContent = 'Loading...';
+            jobSkillsList.textContent = 'Loading...';
+            
             try {
                 const response = await fetch(api_url);
                 if (!response.ok) {
@@ -47,26 +82,50 @@
                 
                 summaryMessage.textContent = 'Analysis Complete: Detected critical skills missing from current curriculum.';
                 
-                data.gaps_found.forEach(job => {
-                    if (job.CRITICAL_GAPS && job.CRITICAL_GAPS.length > 0) {
-                        const newRow = tableBody.insertRow();
-                        
-                        // 1. Job Role
-                        newRow.insertCell().textContent = job.job_role;
-                        
-                        // 2. CRITICAL GAPS (Highlighted list)
-                        const gapsCell = newRow.insertCell();
-                        gapsCell.className = 'gaps-list';
-                        gapsCell.textContent = job.CRITICAL_GAPS.join(', ');
-                        
-                        // 3. Action Urgency (Simple Logic for MVP)
-                        const urgency = (job.CRITICAL_GAPS.length > 5) ? 'IMMEDIATE' : 'HIGH';
-                        newRow.insertCell().textContent = urgency;
-                    }
-                });
+                // --- NEW DATA RENDERING ---
+                
+                // 1. Render Course Skills
+                const courseSkills = Array.isArray(data.course_skills) ? data.course_skills.sort() : [];
+                courseSkillsTitle.textContent = `Curriculum Skills Extracted (${courseSkills.length})`;
+                courseSkillsList.textContent = courseSkills.join(', ');
+
+                // 2. Render Required Job Skills
+                const jobSkills = Array.isArray(data.required_job_skills) ? data.required_job_skills.sort() : [];
+                jobSkillsTitle.textContent = `Market Demand Skills Extracted (${jobSkills.length})`;
+                jobSkillsList.textContent = jobSkills.join(', ');
+
+                // --- EXISTING GAPS TABLE RENDERING ---
+
+                if (data.gaps_found && data.gaps_found.length > 0) {
+                     data.gaps_found.forEach(job => {
+                        if (job.CRITICAL_GAPS && job.CRITICAL_GAPS.length > 0) {
+                            const newRow = tableBody.insertRow();
+                            
+                            // 1. Job Role
+                            newRow.insertCell().textContent = job.job_role;
+                            
+                            // 2. CRITICAL GAPS (Highlighted list)
+                            const gapsCell = newRow.insertCell();
+                            gapsCell.className = 'gaps-list';
+                            gapsCell.textContent = job.CRITICAL_GAPS.join(', ');
+                            
+                            // 3. Action Urgency (Simple Logic for MVP)
+                            const urgency = (job.CRITICAL_GAPS.length > 2) ? 'IMMEDIATE' : 'HIGH';
+                            newRow.insertCell().textContent = urgency;
+                        }
+                    });
+                } else {
+                    const newRow = tableBody.insertRow();
+                    const cell = newRow.insertCell();
+                    cell.colSpan = 3;
+                    cell.textContent = "✅ No critical skill gaps found! Curriculum meets current job market demand.";
+                    cell.style.textAlign = 'center';
+                }
 
             } catch (error) {
                 summaryMessage.textContent = `Error loading data: ${error.message}. Ensure the FastAPI server is running.`;
+                courseSkillsList.textContent = 'Failed to load data.';
+                jobSkillsList.textContent = 'Failed to load data.';
                 console.error("Fetch error:", error);
             }
         }
