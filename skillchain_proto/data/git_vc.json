@@ -1,0 +1,10 @@
+{
+  "id": "did:skillchain:credential:101",
+  "type": "VerifiableCredential",
+  "issuer": "NUD Computer Science Dept",
+  "issued_to": "Alice Student",
+  "skill": "Git Version Control",
+  "reason": "Gap Filled: Essential for Front-End Dev Jobs",
+  "evidence_hash": "0x5c42e9f8268a735e5d33f78a25c345d9f01831c201d4a0f44357c3e5d0f682c0", 
+  "status": "VERIFIED"
+}

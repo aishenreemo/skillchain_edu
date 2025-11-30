@@ -1,0 +1,17 @@
+[
+    {
+        "job_title": "Android Mobile App Developer",
+        "location": "Manila / Remote / Hybrid",
+        "description": "We are seeking a seasoned mobile developer to maintain and expand our core application. Expertise in **Kotlin** and native **Java** development for Android is a must. Candidates must be proficient in working with the **Android SDK** and integrating third-party services via **REST API**. Experience with local data persistence using **SQL** and deep skills in debugging are strongly preferred."
+    },
+    {
+        "job_title": "Front-End Web Developer",
+        "location": "Quezon City / Remote",
+        "description": "Join our product team focusing on user interfaces. Strong foundational skills in **HTML**, **CSS**, and **JavaScript** are essential. We heavily utilize modern frameworks like **React** and **Vue**. All developers are expected to maintain our code base using **Git** and ensure **Responsive Design** across all platforms."
+    },
+    {
+        "job_title": "Software QA Engineer",
+        "location": "Makati City / On-site",
+        "description": "The QA team is hiring an engineer to establish and execute testing strategies. Experience with automated testing tools like **Selenium** and **Appium** is required. Must be familiar with unit testing frameworks such as **JUnit** and possess strong **Manual Testing** skills. Daily tasks involve detailed **Bug Tracking** and developing new **Automation Testing** scripts."
+    }
+]

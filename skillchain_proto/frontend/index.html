@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkillChain Student Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4f8; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); }
+        header { border-bottom: 3px solid #5a189a; padding-bottom: 10px; margin-bottom: 30px; }
+        header h1 { color: #5a189a; margin: 0; }
+        .badge-container { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+        .skill-badge { background-color: #d1baff; padding: 25px; border-radius: 10px; flex-grow: 1; margin-right: 20px; border: 1px solid #9d4edd; }
+        .skill-badge h2 { margin-top: 0; color: #3c096c; display: flex; align-items: center; }
+        .skill-badge p { margin: 5px 0; font-size: 0.95em; }
+        .qr-section { text-align: center; border-left: 2px dashed #ccc; padding-left: 20px; }
+        .qr-section img { border: 5px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .qr-section a { display: block; margin-top: 10px; color: #5a189a; font-weight: bold; text-decoration: none; }
+        .ai-recommendation { background-color: #e6f7ff; padding: 20px; border-radius: 8px; border-left: 5px solid #1e88e5; }
+        .ai-recommendation h3 { color: #1e88e5; margin-top: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SkillChain EDU Student Identity</h1>
+        </header>
+        
+        <h2>Welcome, Alice P. Student</h2>
+
+        <div class="badge-container">
+            <div class="skill-badge">
+                <h2>✅ Git Version Control</h2>
+                <p><strong>Status:</strong> Verifiable Credential (VC-101)</p>
+                <p><strong>Issued by:</strong> NUD ComSci Department</p>
+                <p><strong>Achieved:</strong> Advanced Workshop (Filling Critical Gap)</p>
+                <p><strong>Proof Hash:</strong> <code>0x5c42e9f8...</code> (Anchored on Chain)</p>
+            </div>
+
+            <div class="qr-section">
+                <img src="http://127.0.0.1:8000/qr/git_vc" alt="Git Skill QR Code" width="150"/>
+                <p style="font-size: 0.9em; margin-bottom: 5px;">Scan to Verify Skill Proof</p>
+                <a href="http://127.0.0.1:8000/verify/git_vc" target="_blank">Direct Verification Link</a>
+            </div>
+        </div>
+
+        <div class="ai-recommendation">
+            <h3>💡 Curriculum Intelligence</h3>
+            <p>Our system detected this skill as a **CRITICAL GAP** required by 80% of job postings.</p>
+            <p>View the full analysis dashboard here: <a href="/dashboard/gap_analysis">**View AI Gap Analysis Dashboard**</a></p>
+        </div>
+    </div>
+</body>
+</html>

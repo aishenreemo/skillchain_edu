@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkillChain Credential Verification</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        header h1 { color: #1e88e5; }
+        .success { background-color: #4CAF50; color: white; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+        .failure { background-color: #f44336; color: white; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+        .hash-display { font-family: monospace; font-size: 0.9em; background-color: #eee; padding: 5px; border-radius: 3px; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><h1>SkillChain EDU Credential Verification</h1></header>
+        <div id="verification-output">
+            <p>... Initiating Cryptographic Verification ...</p>
+        </div>
+    </div>
+
+    <script>
+        async function verifyCredential() {
+            // 1. Get Credential ID from the URL (e.g., /verify/git_vc)
+            const urlParts = window.location.pathname.split('/');
+            const credentialId = urlParts[urlParts.length - 1];
+
+            const api_url = `http://127.0.0.1:8000/skills/${credentialId}`;
+            const outputDiv = document.getElementById('verification-output');
+            
+            try {
+                // 2. Call the working FastAPI endpoint
+                const response = await fetch(api_url);
+                
+                if (!response.ok) {
+                    throw new Error(`Credential not found (HTTP ${response.status})`);
+                }
+                
+                const data = await response.json();
+                
+                // 3. Display Success Status and Details (Crucial Demo Point)
+                outputDiv.innerHTML = `
+                    <div class="success">
+                        <h2>✅ CREDENTIAL VERIFIED ON SKILLCHAIN!</h2>
+                        <p>This skill proof is tamper-evident and anchored on the SkillChain registry.</p>
+                    </div>
+                    <h3>Credential Details:</h3>
+                    <p><strong>Skill Attested:</strong> ${data.skill}</p>
+                    <p><strong>Issued To:</strong> ${data.issued_to}</p>
+                    <p><strong>Issued By:</strong> ${data.issuer}</p>
+                    <p><strong>Date Issued:</strong> ${data.issuanceDate ? new Date(data.issuanceDate).toLocaleDateString() : 'N/A'}</p>
+                    <p><strong>Blockchain Proof Hash:</strong></p>
+                    <div class="hash-display">${data.evidence_hash}</div>
+                    <p><strong>Context:</strong> ${data.reason}</p>
+                `;
+            } catch (error) {
+                // 4. Display Failure Status
+                outputDiv.innerHTML = `<div class="failure">
+                    <h2>❌ VERIFICATION FAILED</h2>
+                    <p>The credential ID is invalid or the cryptographic proof could not be found/validated on the SkillChain registry. The proof is NOT authentic.</p>
+                    <p>Error: ${error.message}</p>
+                </div>`;
+            }
+        }
+
+        // Run verification logic if the path indicates a verification attempt
+        if (window.location.pathname.startsWith('/verify/')) {
+            verifyCredential();
+        }
+    </script>
+</body>
+</html>

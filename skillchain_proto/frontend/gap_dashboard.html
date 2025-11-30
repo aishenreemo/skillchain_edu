@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkillChain AI Gap Detector Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f4f8; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h1 { color: #d90429; border-bottom: 3px solid #d90429; padding-bottom: 10px; }
+        .gap-summary { background-color: #fff0f0; border: 1px solid #d90429; color: #d90429; padding: 15px; margin-bottom: 20px; border-radius: 4px; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .gaps-list { color: #d90429; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚨 AI Curriculum Gap Detector</h1>
+        <p class="gap-summary" id="summary-message">Scanning syllabi against real-world job demands...</p>
+        
+        <table id="gaps-table">
+            <thead>
+                <tr>
+                    <th>Job Role (Market Demand)</th>
+                    <th>CRITICAL GAPS (Skills Missing)</th>
+                    <th>Action Urgency</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        async function loadGapData() {
+            const api_url = 'http://127.0.0.1:8000/ai/skillner_analyze';
+            const tableBody = document.getElementById('gaps-table').getElementsByTagName('tbody')[0];
+            const summaryMessage = document.getElementById('summary-message');
+            
+            try {
+                const response = await fetch(api_url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                summaryMessage.textContent = 'Analysis Complete: Detected critical skills missing from current curriculum.';
+                
+                data.gaps_found.forEach(job => {
+                    if (job.CRITICAL_GAPS && job.CRITICAL_GAPS.length > 0) {
+                        const newRow = tableBody.insertRow();
+                        
+                        // 1. Job Role
+                        newRow.insertCell().textContent = job.job_role;
+                        
+                        // 2. CRITICAL GAPS (Highlighted list)
+                        const gapsCell = newRow.insertCell();
+                        gapsCell.className = 'gaps-list';
+                        gapsCell.textContent = job.CRITICAL_GAPS.join(', ');
+                        
+                        // 3. Action Urgency (Simple Logic for MVP)
+                        const urgency = (job.CRITICAL_GAPS.length > 5) ? 'IMMEDIATE' : 'HIGH';
+                        newRow.insertCell().textContent = urgency;
+                    }
+                });
+
+            } catch (error) {
+                summaryMessage.textContent = `Error loading data: ${error.message}. Ensure the FastAPI server is running.`;
+                console.error("Fetch error:", error);
+            }
+        }
+
+        loadGapData();
+    </script>
+</body>
+</html>

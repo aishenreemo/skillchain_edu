@@ -1,0 +1,17 @@
+[
+  {
+    "job_title": "Android Mobile App Developer",
+    "location": "Manila / Remote / Hybrid",
+    "skills": ["Kotlin", "Java", "Android SDK", "REST API", "SQL", "Debugging"]
+  },
+  {
+    "job_title": "Front-End Web Developer",
+    "location": "Quezon City / Remote",
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Vue", "Responsive Design", "Git"]
+  },
+  {
+    "job_title": "Software QA Engineer",
+    "location": "Makati City / On-site",
+    "skills": ["Selenium", "Appium", "JUnit", "Manual Testing", "Bug Tracking", "Automation Testing"]
+  }
+]

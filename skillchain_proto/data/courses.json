@@ -1,0 +1,14 @@
+[
+  {
+    "code": "CCDATRCL",
+    "title": "Data Structures and Algorithms",
+    "description": "This course covers fundamental data structures, algorithms, and problem-solving techniques essential for computer science and software engineering. Emphasis is placed on algorithm analysis, efficiency, and practical implementation.",
+    "objectives": ["Understand and implement basic data structures like arrays, linked lists, stacks, queues, trees, and graphs.", "Analyze algorithm complexity using Big O notation.", "Design efficient algorithms for sorting, searching, and traversal problems."]
+  },
+  {
+    "code": "CCDAPDEV",
+    "title": "Android App Development Fundamentals",
+    "description": "This course introduces students to Android application development. Students will learn to design, develop, and deploy Android apps using Kotlin and Android Studio.",
+    "weekly_topics": ["Kotlin Basics for Android Programming", "Android UI Components (Layouts, Views, Widgets)", "Data Storage: SharedPreferences, SQLite, Room", "Working with REST APIs and JSON"]
+  }
+]
