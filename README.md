@@ -13,26 +13,6 @@
 ![Deadline: 2025-12-01](https://img.shields.io/badge/Deadline-Dec%201%2C%202025-red)
 ---
 
-## 🚨 Attention BS Computer Science of NUD!
-
-We **ONLY have 2 DAYS left** to finalize SkillChain EDU for SECA!  
-This is **your chance to contribute**, learn, and be part of a project that **could impress judges and showcase ComSci innovation**.  
-
-Every contribution counts —**big or small**— and **everyone will be acknowledged**. Let’s pull together and make this happen! 💪🔥
-
-![](banner.png)
-## ⚡ How to Contribute RIGHT NOW
-
-1. Pick a task from [GitHub Milestones](https://github.com/aishenreemo/skillchain_edu/milestone/1)
-2. Comment you’re taking it  
-3. Work on it immediately  
-4. Just comment your work, Google Docs with no write access or anything you want to add. If you want a pull request, go on, I'll guide you if needed
-5. Get **acknowledged** in the README and presentation  
-
-> ⏰ We must finish **all tasks in 2 days** (December 1, 2025) — no delays!
-
----
-
 ## Project Overview
 
 SkillChain EDU is an AI-driven curriculum intelligence platform integrated with a Web3 student skill identity layer. It continuously analyzes course syllabi, job market demands, and emerging technologies to detect curriculum gaps and recommend updates. Students who complete industry-validated modules, projects, or workshops receive verifiable, consent-based skill credentials stored in a tamper-evident manner.
